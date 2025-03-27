@@ -1,0 +1,28 @@
+import math
+
+def factorial(x):
+    if x < 0:  
+        return "Negative number."  
+    elif x == 0 or x == 1:  
+        return 1  
+    else:  
+        result = 1  
+        for i in range(2, x + 1):  
+            result *= i  
+        return result
+
+steps = lambda x, n: ((-1) ** n * (x ** (2 * n + 1))) / factorial(2 * n + 1)
+
+def sine_x(x, n):
+    x_rad = math.radians(x)
+    sin_value = 0
+    for i in range(n):
+        sin_value += steps(x_rad, i)
+    return sin_value
+
+x = float(input("Enter the angle in degrees: "))
+n = int(input("Enter the number of terms: "))
+
+result = sine_x(x, n)
+
+print(f"sin({x}) ≈ {result}")
