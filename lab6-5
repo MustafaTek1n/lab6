@@ -1,0 +1,52 @@
+
+#include <iostream>
+using namespace std;
+
+
+double func(double);
+double func();
+
+int main() {
+    double n;
+    cout <<"Enter a number: " ;
+    cin>>n;
+    
+    cout<<func(n)<<endl;
+    cout<<func()<<endl;
+    return 0;
+}
+
+double func(double n){
+    double result = 0.0;
+    
+    if(n<=0){
+        return result + 0;
+    }else if(n==1){
+        return result + 1;
+    }else{
+        result +=1/n;
+        return result + func(n-1);
+    }
+    return result;
+}
+
+double func(){
+    
+    double n ;
+    cout<<"enter a number: ";
+    cin>>n;
+    
+    double result =0.0; 
+    
+    if(n<=0){
+        return result + 0;
+    }else if(n==1){
+        return result + 1;
+    }else{
+        result +=1/n;
+        return result + func(n-1);
+    }
+    return result;
+    
+    
+}
