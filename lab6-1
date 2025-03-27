@@ -1,0 +1,17 @@
+print("Enter a number to calculate factorial")
+
+x = int(input("Number : "))
+result =1
+def factorial(x):
+    if x < 0:  
+        return "Negative number."  
+    elif x == 0 or x == 1:  
+        return 1  
+    else:  
+        result = 1  
+        for i in range(2, x + 1):  
+            result *= i  
+        return result
+        
+
+print(factorial(x))  
