@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+double harmonic_sum = 0.0; // Global variable to store the sum
+
+/**
+ * brief Recursive function to compute the harmonic series.
+ * param n The number of terms in the harmonic series.
+ * return void ,uses a global variable to store the result
+ */
+void harmonic(int n) {
+    if (n == 0) {
+        return; // Base case
+    }
+    harmonic_sum += 1.0 / n; // Add the current term to the global sum
+    harmonic(n - 1); // Recursive call for the next term
+}
+
+int main() {
+    int n;
+    cout << "Enter the value of n: ";
+    cin >> n;
+
+    harmonic(n); // Call recursive function
+
+    cout << harmonic_sum << endl;
+    return 0;
+}
